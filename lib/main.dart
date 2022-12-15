@@ -40,7 +40,18 @@ class MyApp extends HookWidget {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                MyNetworkImage(globalKey: imageGlobalKey),
+                Stack(
+                  children: [
+                    MyNetworkImage(globalKey: imageGlobalKey),
+                    Container(
+                      width: 200,
+                      height: 200,
+                      decoration: const BoxDecoration(
+                        color: Colors.red,
+                      ),
+                    ),
+                  ],
+                ),
                 const SizedBox(height: 16),
                 OutlinedButton(
                   onPressed: () async {
